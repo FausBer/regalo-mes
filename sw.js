@@ -1,4 +1,4 @@
-const CACHE_NAME = "chuliverso-cache-v2"; // Cambiá este nombre para actualizar cache
+const CACHE_NAME = "chuliverso-cache-v3"; // Cambiá este nombre para actualizar cache
 
 const FILES_TO_CACHE = [
   "/",
