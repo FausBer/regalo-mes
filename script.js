@@ -1,6 +1,6 @@
 const links = {
-  "2025-06-09": "dias/dia1/index.html",
-  "2025-06-10": "dias/dia2/index.html",
+  "2025-06-07": "dias/dia1/index.html",
+  "2025-06-08": "dias/dia2/index.html",
   "2025-06-11": "dias/dia3/index.html",
   "2025-06-12": "dias/dia4/index.html",
   "2025-06-13": "dias/dia5/index.html",
