@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Día 6 – Mini juego sorpresa 🎲</title>
+    <link rel="stylesheet" href="../dias-style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>🎲 Día 6 – Mini juego sorpresa</h1>
+      <p class="mensaje">¿Dónde nos dimos nuestro primer beso?</p>
+
+      <div class="opciones-juego">
+        <button class="btn-juego" onclick="checkAnswer('a')">
+          A) En el parque
+        </button>
+        <button class="btn-juego" onclick="checkAnswer('b')">
+          B) En la estación del colectivo
+        </button>
+        <button class="btn-juego" onclick="checkAnswer('c')">
+          C) En la puerta de tu casa
+        </button>
+      </div>
+
+      <p id="resultado" class="mensaje"></p>
+
+      <p class="pista">
+        <strong>Pista:</strong> Hoy el regalo está en un lugar que usás todos
+        los días, ¡pero pocas veces mirás! 😉
+      </p>
+    </div>
+
+    <script>
+      function checkAnswer(opcion) {
+        const resultado = document.getElementById("resultado");
+        if (opcion === "b") {
+          resultado.textContent =
+            "¡Correcto! Hoy te espera una cena sorpresa 🥳";
+          resultado.style.color = "#4caf50"; // verde
+        } else {
+          resultado.textContent = "No es esa, seguí intentando... 😅";
+          resultado.style.color = "#f44336"; // rojo
+        }
+      }
+    </script>
+  </body>
+</html>

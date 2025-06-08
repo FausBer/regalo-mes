@@ -5,13 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sorpresa diaria 🎁</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .foto-personal {
+        width: 100%;
+        max-width: 320px;
+        border-radius: 16px;
+        margin: 20px auto;
+        display: block;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .cuenta-regresiva {
+        font-size: 16px;
+        text-align: center;
+        margin: 20px 0;
+        color: #555;
+      }
+
+      .cuenta-regresiva strong {
+        font-weight: bold;
+        color: #e91e63;
+      }
+    </style>
   </head>
+
   <body>
     <div class="container">
       <header class="header">
         <h1>🎁 Tu sorpresa diaria</h1>
         <p class="sub">Canjeá tu regalo si ya llegó el día</p>
       </header>
+
+      <!-- 🖼️ Foto personalizada -->
+      <img
+        src="src/Foto-principal.jpg"
+        alt="Foto tuya o juntos"
+        class="foto-personal"
+      />
+
+      <!-- ⏳ Contenedor para la cuenta regresiva -->
+      <div class="cuenta-regresiva" id="cuenta-regresiva">
+        Cargando próxima sorpresa...
+      </div>
 
       <main class="main-content">
         <button id="btn-canjear" class="btn" disabled>Canjear regalo</button>

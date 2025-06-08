@@ -55,3 +55,37 @@ for (const fecha in links) {
 
   lista.appendChild(li);
 }
+
+// Cuenta regresiva hasta la próxima sorpresa
+const hoyFecha = new Date();
+const fechas = Object.keys(links);
+const futura = fechas.find((fecha) => new Date(fecha) > hoyFecha);
+
+if (futura) {
+  const objetivo = new Date(futura + "T00:00:00");
+  const contenedor = document.getElementById("cuenta-regresiva");
+
+  function actualizarCuenta() {
+    const ahora = new Date();
+    const diff = objetivo - ahora;
+
+    if (diff <= 0) {
+      contenedor.innerHTML = "🎉 ¡La próxima sorpresa ya está disponible!";
+      return;
+    }
+
+    const horas = Math.floor(diff / 1000 / 60 / 60);
+    const minutos = Math.floor((diff / 1000 / 60) % 60);
+    const segundos = Math.floor((diff / 1000) % 60);
+
+    contenedor.innerHTML = `
+      ⏳ Próxima sorpresa en: 
+      <strong>${String(horas).padStart(2, "0")}h</strong> :
+      <strong>${String(minutos).padStart(2, "0")}m</strong> :
+      <strong>${String(segundos).padStart(2, "0")}s</strong>
+    `;
+  }
+
+  actualizarCuenta();
+  setInterval(actualizarCuenta, 1000);
+}

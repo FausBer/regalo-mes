@@ -157,6 +157,26 @@ body {
   box-shadow: 0 2px 5px rgba(216, 27, 96, 0.1);
 }
 
+/* Dia 6 */
+
+.btn-juego {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-juego:hover {
+  background-color: #c2185b;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
   body {
