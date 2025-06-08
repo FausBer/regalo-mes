@@ -32,8 +32,8 @@ const links = {
   "2025-07-09": "dias/dia31/index.html",
 };
 
-const hoy = new Date().toISOString().split("T")[0]; // original
-// const hoy = "2025-06-10"; // fecha fija para pruebas
+//const hoy = new Date().toISOString().split("T")[0]; // original
+const hoy = "2025-06-10"; // fecha fija para pruebas
 const btn = document.getElementById("btn-canjear");
 const lista = document.getElementById("lista-dias");
 
