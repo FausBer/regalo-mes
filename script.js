@@ -1,6 +1,6 @@
 const links = {
-  "2025-06-07": "dias/dia1/index.html",
-  "2025-06-08": "dias/dia2/index.html",
+  "2025-06-09": "dias/dia1/index.html",
+  "2025-06-10": "dias/dia2/index.html",
   "2025-06-11": "dias/dia3/index.html",
   "2025-06-12": "dias/dia4/index.html",
   "2025-06-13": "dias/dia5/index.html",
@@ -32,7 +32,8 @@ const links = {
   "2025-07-09": "dias/dia31/index.html",
 };
 
-const hoy = new Date().toISOString().split("T")[0];
+// const hoy = new Date().toISOString().split('T')[0]; // original
+const hoy = "2025-06-10"; // fecha fija para pruebas
 const btn = document.getElementById("btn-canjear");
 const lista = document.getElementById("lista-dias");
 
