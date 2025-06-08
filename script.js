@@ -89,3 +89,33 @@ if (futura) {
   actualizarCuenta();
   setInterval(actualizarCuenta, 1000);
 }
+
+// Cuenta regresiva hasta el 9 de julio de 2025
+const objetivo2 = new Date("2025-07-09T00:00:00");
+const contenedor2 = document.getElementById("cuenta-regresiva-2anios");
+
+function actualizarCuenta2() {
+  const ahora = new Date();
+  const diff = objetivo2 - ahora;
+
+  if (diff <= 0) {
+    contenedor2.innerHTML = "🎉 ¡Feliz 2° aniversario!";
+    return;
+  }
+
+  const dias = Math.floor(diff / 1000 / 60 / 60 / 24);
+  const horas = Math.floor((diff / 1000 / 60 / 60) % 24);
+  const minutos = Math.floor((diff / 1000 / 60) % 60);
+  const segundos = Math.floor((diff / 1000) % 60);
+
+  contenedor2.innerHTML = `
+    ⏳ Nuestro 2° aniversario en: 
+    <strong>${dias}d</strong> 
+    <strong>${String(horas).padStart(2, "0")}h</strong> :
+    <strong>${String(minutos).padStart(2, "0")}m</strong> :
+    <strong>${String(segundos).padStart(2, "0")}s</strong>
+  `;
+}
+
+actualizarCuenta2();
+setInterval(actualizarCuenta2, 1000);
