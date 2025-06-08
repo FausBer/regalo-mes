@@ -119,3 +119,10 @@ function actualizarCuenta2() {
 
 actualizarCuenta2();
 setInterval(actualizarCuenta2, 1000);
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js?v=2")
+    .then(() => console.log("Service Worker registrado"))
+    .catch((err) => console.log("Error registrando SW:", err));
+}
