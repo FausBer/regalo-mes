@@ -32,37 +32,47 @@ const links = {
   "2025-07-09": "dias/dia31/index.html",
 };
 
-const hoy = new Date().toISOString().split("T")[0]; // original
-//const hoy = "2025-06-10"; // fecha fija para pruebas
+const hoy = new Date();
+const hoyStr = hoy.toISOString().slice(0, 10); // "YYYY-MM-DD"
 const btn = document.getElementById("btn-canjear");
 const lista = document.getElementById("lista-dias");
+
+// Deshabilitar botón por defecto
+btn.disabled = true;
 
 for (const fecha in links) {
   const li = document.createElement("li");
 
-  if (fecha < hoy) {
+  // Convertir la fecha del objeto a Date (sin hora)
+  const fechaDate = new Date(fecha + "T00:00:00");
+
+  if (fechaDate < new Date(hoyStr + "T00:00:00")) {
+    // Fecha pasada
     li.innerHTML = `<span>${fecha}</span> 
-    <span class="estado recibido"><a href="${links[fecha]}" target="_blank">✅ Ver regalo</a></span>`;
-  } else if (fecha === hoy) {
+      <span class="estado recibido"><a href="${links[fecha]}" target="_blank">✅ Ver regalo</a></span>`;
+  } else if (fecha === hoyStr) {
+    // Fecha de hoy
     li.innerHTML = `<span>${fecha}</span> 
-    <span class="estado disponible">🎁 Disponible</span>`;
+      <span class="estado disponible">🎁 Disponible</span>`;
     btn.disabled = false;
-    btn.onclick = () => (window.location.href = links[fecha]);
+    btn.onclick = () => {
+      window.location.href = links[fecha];
+    };
   } else {
+    // Fecha futura
     li.innerHTML = `<span>${fecha}</span> 
-    <span class="estado futuro">⏳ Próximamente</span>`;
+      <span class="estado futuro">⏳ Próximamente</span>`;
   }
 
   lista.appendChild(li);
 }
 
 // Cuenta regresiva hasta la próxima sorpresa
-const hoyFecha = new Date();
-const fechas = Object.keys(links);
-const futura = fechas.find((fecha) => new Date(fecha) > hoyFecha);
+const fechas = Object.keys(links).map((f) => new Date(f + "T00:00:00"));
+const futura = fechas.find((fecha) => fecha > new Date(hoyStr + "T00:00:00"));
 
 if (futura) {
-  const objetivo = new Date(futura + "T00:00:00");
+  const objetivo = futura;
   const contenedor = document.getElementById("cuenta-regresiva");
 
   function actualizarCuenta() {
@@ -88,6 +98,9 @@ if (futura) {
 
   actualizarCuenta();
   setInterval(actualizarCuenta, 1000);
+} else {
+  document.getElementById("cuenta-regresiva").innerHTML =
+    "🎉 ¡No hay próximas sorpresas!";
 }
 
 // Cuenta regresiva hasta el 9 de julio de 2025
@@ -122,7 +135,7 @@ setInterval(actualizarCuenta2, 1000);
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/sw.js?v=3")
+    .register("/sw.js?v=4")
     .then(() => console.log("Service Worker registrado"))
     .catch((err) => console.log("Error registrando SW:", err));
 }
