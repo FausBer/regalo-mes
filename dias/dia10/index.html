@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Día 10 – ¡Feliz Aniversario! 🎆</title>
+
+    <link rel="stylesheet" href="../dias-style.css" />
+    <link rel="icon" href="../src/logo-chuliverso.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../src/logo-chuliverso.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Chuliverso" />
+    <link rel="manifest" href="../manifest.json?v=1" />
+  </head>
+
+  <body>
+    <canvas id="fuegosCanvas"></canvas>
+
+    <div class="card">
+      <h1>🎉 Día 10 – ¡Felices 2 años mi amor!</h1>
+      <p class="mensaje">
+        Hoy celebramos algo que me llena el alma:
+        <strong>nuestros 2 años juntos</strong>. 💖 <br /><br />
+        Dos años de aventuras, de charlas infinitas, de miradas que hablan más
+        que mil palabras. De abrazos que curan todo y de risas que nos hacen
+        olvidar el mundo. No hay regalo que alcance para expresar lo feliz que
+        me hace caminar la vida con vos. ❤️
+        <br /><br />
+        Gracias por elegirme, por amarme con todo tu ser, por ser mi compañera,
+        mi apoyo, mi todo. Te amo con todo mi corazón.
+        <br /><br />
+        ¡Feliz aniversario, chuli de mi vida! 🎆🎇
+      </p>
+
+      <div class="carrusel-container">
+        <div class="carrusel" id="carrusel">
+          <img src="../src-dias/foto-dia1.JPG" alt="Aniversario 1" />
+          <img src="../src-dias/foto-dia1.JPG" alt="Aniversario 2" />
+          <img src="../src-dias/foto-dia1.JPG" alt="Aniversario 3" />
+        </div>
+        <div class="controles">
+          <button onclick="moverCarrusel(-1)">⟵</button>
+          <button onclick="moverCarrusel(1)">⟶</button>
+        </div>
+      </div>
+
+      <div class="pista">
+        <strong>Pista:</strong> Lo nuestro es fuego eterno 🔥
+      </div>
+    </div>
+
+    <script src="script-dia10.js"></script>
+  </body>
+</html>
