@@ -32,8 +32,11 @@ const links = {
   "2025-07-09": "dias/dia31/index.html",
 };
 
-const hoy = new Date();
-const hoyStr = hoy.toISOString().slice(0, 10); // "YYYY-MM-DD"
+const hoyLocal = new Date();
+const año = hoyLocal.getFullYear();
+const mes = String(hoyLocal.getMonth() + 1).padStart(2, "0");
+const dia = String(hoyLocal.getDate()).padStart(2, "0");
+const hoyStr = `${año}-${mes}-${dia}`;
 const btn = document.getElementById("btn-canjear");
 const lista = document.getElementById("lista-dias");
 
